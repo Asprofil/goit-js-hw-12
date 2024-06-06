@@ -92,9 +92,6 @@ body {
 .loader:not(.hidden) {
   display: block;
 }
-.hidden {
-  display: none !important;
-}
 
 .load-more {
   padding: 10px 20px;
@@ -109,7 +106,9 @@ body {
   display: flex;
   align-items: center;
 }
-
+.hidden {
+  display: none !important;
+}
 .load-more:hover {
   background-color: #0056b3;
 }
