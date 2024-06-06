@@ -1,10 +1,13 @@
-
-
-let gallery = new SimpleLightbox('.gallery a');
+let gallery = null;
 
 export function renderImages(images) {
   const galleryContainer = document.querySelector('.gallery');
-  galleryContainer.innerHTML = images.map(image => createImageCard(image)).join('');
+  const markup = images.map(image => createImageCard(image)).join('');
+  galleryContainer.insertAdjacentHTML('beforeend', markup);
+  if (gallery) {
+    gallery.destroy();
+  }
+  gallery = new SimpleLightbox('.gallery a');
   gallery.refresh();
 }
 
